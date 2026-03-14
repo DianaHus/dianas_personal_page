@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Scroll fluido tra le sezioni anchor */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Compensa l'altezza della navbar fissa (h-16 = 4rem = 64px) */
+  section[id],
+  footer[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  /* Font e colore di default per il body */
+  body {
+    @apply font-sans text-gray-700 antialiased bg-white;
+  }
+}
