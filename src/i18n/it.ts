@@ -51,7 +51,7 @@ export const it: Translations = {
   projects: {
     title: 'I miei progetti',
     subtitle:
-      'Cose che ho costruito — alcune per lavoro, alcune per divertimento, alcune perché non riuscivo a dormire.',
+      'Cose che ho costruito — alcune accademiche, alcune per divertimento, alcune perché non riuscivo a dormire.',
     githubLabel: 'GitHub',
     demoLabel: 'Demo live',
     items: [

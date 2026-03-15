@@ -102,7 +102,7 @@ export const en: Translations = {
   projects: {
     title: 'My projects',
     subtitle:
-      "Things I built — some for work, some for fun, some because I couldn't sleep.",
+      "Things I built — some for accademical work, some for fun, some because I couldn't sleep.",
     githubLabel: 'GitHub',
     demoLabel: 'Live demo',
     items: [
