@@ -50,7 +50,7 @@ export function Contacts() {
   ]
 
   return (
-    <footer id="contacts" className="py-24 bg-white border-t border-gray-100">
+    <footer id="contacts" className="py-24 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Intestazione sezione */}
@@ -58,10 +58,10 @@ export function Contacts() {
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-pink-400 mb-3">
             04
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900 mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900 dark:text-gray-100 mb-6">
             {contacts.title}
           </h2>
-          <p className="text-gray-500 text-base md:text-lg max-w-md leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-400 text-base md:text-lg max-w-md leading-relaxed">
             {contacts.closing}
           </p>
         </div>
@@ -75,17 +75,17 @@ export function Contacts() {
               // I link esterni si aprono in nuova tab; mailto no
               target={link.href.startsWith('mailto') ? undefined : '_blank'}
               rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="group flex items-center gap-4 text-gray-500 hover:text-gray-900 transition-colors"
+              className="group flex items-center gap-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
             >
               {/* Icona in un cerchio che cambia colore al hover */}
-              <span className="w-11 h-11 rounded-full bg-gray-50 group-hover:bg-pink-50 flex items-center justify-center transition-colors text-gray-400 group-hover:text-pink-400 flex-shrink-0">
+              <span className="w-11 h-11 rounded-full bg-gray-50 dark:bg-gray-800 group-hover:bg-pink-50 dark:group-hover:bg-pink-950/30 flex items-center justify-center transition-colors text-gray-400 dark:text-gray-500 group-hover:text-pink-400 flex-shrink-0">
                 {link.icon}
               </span>
               <div>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">
+                <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-medium mb-0.5">
                   {link.label}
                 </p>
-                <p className="text-sm font-medium text-gray-700 group-hover:text-pink-500 transition-colors">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-pink-500 transition-colors">
                   {link.value}
                 </p>
               </div>
@@ -94,8 +94,8 @@ export function Contacts() {
         </div>
 
         {/* Footer credit */}
-        <p className="mt-20 text-xs text-gray-300 tracking-wider">
-          © {new Date().getFullYear()} Diana Rossi — built with React & Tailwind
+        <p className="mt-20 text-xs text-gray-300 dark:text-gray-600 tracking-wider">
+          © {new Date().getFullYear()} Diana Husanu — built with React & Tailwind
         </p>
       </div>
     </footer>

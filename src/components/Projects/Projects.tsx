@@ -3,10 +3,10 @@ import type { Project } from '../../types'
 
 // Cicliamo tra questi colori per i tag dello stack tecnologico
 const TAG_COLORS = [
-  'bg-pink-50 text-pink-600 border-pink-100',
-  'bg-violet-50 text-violet-600 border-violet-100',
-  'bg-rose-50 text-rose-500 border-rose-100',
-  'bg-fuchsia-50 text-fuchsia-600 border-fuchsia-100',
+  'bg-pink-50 text-pink-600 border-pink-100 dark:bg-pink-950/50 dark:text-pink-400 dark:border-pink-900',
+  'bg-violet-50 text-violet-600 border-violet-100 dark:bg-violet-950/50 dark:text-violet-400 dark:border-violet-900',
+  'bg-rose-50 text-rose-500 border-rose-100 dark:bg-rose-950/50 dark:text-rose-400 dark:border-rose-900',
+  'bg-fuchsia-50 text-fuchsia-600 border-fuchsia-100 dark:bg-fuchsia-950/50 dark:text-fuchsia-400 dark:border-fuchsia-900',
 ]
 
 // =============================================================================
@@ -23,7 +23,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, githubLabel, demoLabel }: ProjectCardProps) {
   return (
-    <div className="bg-white border border-gray-100 rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow">
 
       {/* Immagine — renderizzata SOLO se `project.image` non è null */}
       {project.image !== null && (
@@ -36,10 +36,10 @@ function ProjectCard({ project, githubLabel, demoLabel }: ProjectCardProps) {
 
       {/* Header della card */}
       <div>
-        <h3 className="font-serif text-2xl font-medium text-gray-900 mb-2">
+        <h3 className="font-serif text-2xl font-medium text-gray-900 dark:text-gray-100 mb-2">
           {project.title}
         </h3>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
           {project.description}
         </p>
       </div>
@@ -48,7 +48,7 @@ function ProjectCard({ project, githubLabel, demoLabel }: ProjectCardProps) {
       {project.features.length > 0 && (
         <ul className="flex flex-col gap-1">
           {project.features.map(f => (
-            <li key={f} className="text-xs text-gray-400 flex items-start gap-1.5">
+            <li key={f} className="text-xs text-gray-400 dark:text-gray-500 flex items-start gap-1.5">
               <span className="mt-0.5 text-pink-300">›</span>
               {f}
             </li>
@@ -70,7 +70,7 @@ function ProjectCard({ project, githubLabel, demoLabel }: ProjectCardProps) {
       </div>
 
       {/* Link — separati dal resto con un bordo sottile */}
-      <div className="mt-auto flex items-center gap-3 pt-4 border-t border-gray-50">
+      <div className="mt-auto flex items-center gap-3 pt-4 border-t border-gray-50 dark:border-gray-700">
 
         {/* GitHub — sempre presente */}
         {project.github !== '' && (
@@ -78,7 +78,7 @@ function ProjectCard({ project, githubLabel, demoLabel }: ProjectCardProps) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-1.5"
+            className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-1.5"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -95,7 +95,7 @@ function ProjectCard({ project, githubLabel, demoLabel }: ProjectCardProps) {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-pink-500 bg-pink-50 hover:bg-pink-100 transition-colors px-3 py-1 rounded-full flex items-center gap-1.5"
+            className="text-sm font-medium text-pink-500 bg-pink-50 dark:bg-pink-950/40 hover:bg-pink-100 dark:hover:bg-pink-950/70 transition-colors px-3 py-1 rounded-full flex items-center gap-1.5"
           >
             {demoLabel}
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -116,7 +116,7 @@ export function Projects() {
   const { projects } = t
 
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Intestazione sezione */}
@@ -124,10 +124,10 @@ export function Projects() {
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-pink-400 mb-3">
             02
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900 mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900 dark:text-gray-100 mb-4">
             {projects.title}
           </h2>
-          <p className="text-gray-500 text-base max-w-xl">
+          <p className="text-gray-500 dark:text-gray-400 text-base max-w-xl">
             {projects.subtitle}
           </p>
         </div>

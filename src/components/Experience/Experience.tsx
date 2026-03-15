@@ -18,11 +18,11 @@ function TimelineEntry({ item, isLast }: TimelineEntryProps) {
 
       {/* Linea verticale che connette i punti — nascosta sull'ultimo elemento */}
       {!isLast && (
-        <div className="absolute left-[6px] top-4 bottom-0 w-px bg-pink-100" />
+        <div className="absolute left-[6px] top-4 bottom-0 w-px bg-pink-100 dark:bg-pink-900/50" />
       )}
 
       {/* Dot della timeline */}
-      <div className="absolute left-0 top-[6px] w-3 h-3 rounded-full bg-pink-200 ring-2 ring-white ring-offset-1" />
+      <div className="absolute left-0 top-[6px] w-3 h-3 rounded-full bg-pink-200 dark:bg-pink-700 ring-2 ring-white dark:ring-gray-800 ring-offset-1" />
 
       {/* Anno */}
       <p className="text-xs font-semibold text-pink-400 tracking-widest uppercase mb-1.5">
@@ -30,15 +30,15 @@ function TimelineEntry({ item, isLast }: TimelineEntryProps) {
       </p>
 
       {/* Titolo della voce */}
-      <h4 className="font-serif text-base md:text-lg font-medium text-gray-900 leading-snug mb-0.5">
+      <h4 className="font-serif text-base md:text-lg font-medium text-gray-900 dark:text-gray-100 leading-snug mb-0.5">
         {item.title}
       </h4>
 
       {/* Luogo / azienda */}
-      <p className="text-sm text-gray-400 mb-2">{item.place}</p>
+      <p className="text-sm text-gray-400 dark:text-gray-500 mb-2">{item.place}</p>
 
       {/* Descrizione */}
-      <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.description}</p>
     </div>
   )
 }
@@ -51,7 +51,7 @@ export function Experience() {
   const { experience } = t
 
   return (
-    <section id="experience" className="py-24 bg-gray-50">
+    <section id="experience" className="py-24 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Intestazione sezione */}
@@ -59,7 +59,7 @@ export function Experience() {
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-pink-400 mb-3">
             03
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900 dark:text-gray-100">
             {experience.title}
           </h2>
         </div>
@@ -69,7 +69,7 @@ export function Experience() {
 
           {/* Colonna Formazione */}
           <div>
-            <h3 className="font-serif text-2xl font-medium text-gray-800 mb-10 pb-4 border-b border-gray-200">
+            <h3 className="font-serif text-2xl font-medium text-gray-800 dark:text-gray-200 mb-10 pb-4 border-b border-gray-200 dark:border-gray-700">
               {experience.education.title}
             </h3>
             <div>
@@ -86,7 +86,7 @@ export function Experience() {
 
           {/* Colonna Lavoro */}
           <div>
-            <h3 className="font-serif text-2xl font-medium text-gray-800 mb-10 pb-4 border-b border-gray-200">
+            <h3 className="font-serif text-2xl font-medium text-gray-800 dark:text-gray-200 mb-10 pb-4 border-b border-gray-200 dark:border-gray-700">
               {experience.work.title}
             </h3>
             <div>

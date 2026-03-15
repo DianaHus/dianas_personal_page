@@ -6,6 +6,8 @@
   /* Scroll fluido tra le sezioni anchor */
   html {
     scroll-behavior: smooth;
+    /* Transizione fluida al cambio tema — applicata a html così copre tutto */
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   /* Compensa l'altezza della navbar fissa (h-16 = 4rem = 64px) */
@@ -17,5 +19,7 @@
   /* Font e colore di default per il body */
   body {
     @apply font-sans text-gray-700 antialiased bg-white;
+    @apply dark:bg-gray-900 dark:text-gray-300;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 }

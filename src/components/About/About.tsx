@@ -5,7 +5,7 @@ export function About() {
   const { about } = t
 
   return (
-    <section id="about" className="py-24 bg-gray-50">
+    <section id="about" className="py-24 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Intestazione sezione */}
@@ -13,7 +13,7 @@ export function About() {
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-pink-400 mb-3">
             01
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900 dark:text-gray-100">
             {about.title}
           </h2>
         </div>
@@ -24,7 +24,7 @@ export function About() {
           {/* Colonna sinistra: bio */}
           <div className="space-y-5">
             {about.bio.map((paragraph, i) => (
-              <p key={i} className="text-gray-600 leading-relaxed text-base md:text-lg">
+              <p key={i} className="text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
                 {paragraph}
               </p>
             ))}
@@ -35,14 +35,14 @@ export function About() {
 
             {/* Lista "cose che adoro" */}
             <div>
-              <h3 className="font-serif text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+              <h3 className="font-serif text-lg font-medium text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
                 <span className="text-pink-400" aria-hidden="true">♥</span>
                 {about.loves.title}
               </h3>
               <ul className="space-y-2.5">
                 {/* `item` è `string` — TypeScript lo sa perché `loves.items` è `string[]` */}
                 {about.loves.items.map((item, i) => (
-                  <li key={i} className="text-sm text-gray-500 flex items-start gap-2.5">
+                  <li key={i} className="text-sm text-gray-500 dark:text-gray-400 flex items-start gap-2.5">
                     <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-pink-300 flex-shrink-0" />
                     {item}
                   </li>
@@ -52,14 +52,14 @@ export function About() {
 
             {/* Lista "cose di cui farei a meno" */}
             <div>
-              <h3 className="font-serif text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
-                <span className="text-gray-400" aria-hidden="true">✕</span>
+              <h3 className="font-serif text-lg font-medium text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                <span className="text-gray-400 dark:text-gray-500" aria-hidden="true">✕</span>
                 {about.dislikes.title}
               </h3>
               <ul className="space-y-2.5">
                 {about.dislikes.items.map((item, i) => (
-                  <li key={i} className="text-sm text-gray-500 flex items-start gap-2.5">
-                    <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0" />
+                  <li key={i} className="text-sm text-gray-500 dark:text-gray-400 flex items-start gap-2.5">
+                    <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
