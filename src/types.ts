@@ -22,6 +22,8 @@ export interface Project {
   stack: string[]       // Array di stringhe: es. ['React', 'TypeScript', 'Node.js']
   github: string
   demo: string | null   // null = nessun link live disponibile
+  image: string | null  // screenshot URL o path locale, null se non disponibile
+  features: string[]    // 3–5 bullet point sulle funzionalità principali
 }
 
 /**

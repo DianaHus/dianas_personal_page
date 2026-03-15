@@ -66,7 +66,7 @@ export const en: Translations = {
     greeting: 'Just Call Me "Di"',
     role: 'Diana Husanu, Computer Engineer',
     tagline:
-      "Code that mostly works, interfaces that don't make people cry, building Python plugins, web apps, and tinkering with AI experiments, currently based in Turin and fueled by curiosity (and caffeine).",
+      "I write code that mostly works, interfaces that don't make people cry, Python plugins, web apps, and tinkering with AI experiments. Currently based in Turin and fueled by curiosity (and caffeine).",
     cta: 'See my work',
   },
 
@@ -107,28 +107,52 @@ export const en: Translations = {
     demoLabel: 'Live demo',
     items: [
       {
-        title: 'Lunaris',
+        title: 'Stuff Happens',
         description:
-          'A mood-tracking app with a lunar cycle twist. Log your days, spot your patterns, blame the moon.',
-        stack: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
-        github: 'https://github.com',
-        demo: 'https://example.com',
+          'Full stack card game inspired by "Shit Happens", with the original theme "Transportation Hoes". Draw a card and place it in the correct position by misfortune index — 3 wrong placements and you lose, 3 correct in a row and you win.',
+        stack: ['Node.js', 'Express.js', 'React', 'JavaScript', 'SQLite'],
+        github: 'https://github.com/DianaHus/exam-Web-Applications-1-Stuff-Happens',
+        demo: null,
+        image: null,
+        features: [
+          'User authentication with persistent sessions via SQLite',
+          'Turn timer — let it expire and you lose the round',
+          'Up to 3 attempts per card before game over',
+          'Full match history for logged-in users',
+          'Cards sorted and displayed by misfortune index',
+        ],
       },
       {
-        title: 'Patchwork',
+        title: 'TravelMates',
         description:
-          "A drag-and-drop task manager that stays out of your way. No noise, no gamification — just your list.",
-        stack: ['Vue 3', 'Pinia', 'TailwindCSS'],
-        github: 'https://github.com',
-        demo: null,   // nessun link live — il bottone non verrà renderizzato
+          'REST API backend for managing group trips: shared expenses with automatic debt calculation optimised to minimise the number of transactions, activity planning, document storage, and group notes.',
+        stack: ['Java 21', 'Spring Boot', 'Spring Security', 'JWT', 'PostgreSQL', 'Cloudinary', 'Mailgun'],
+        github: 'https://github.com/DianaHus/backend-travelmates',
+        demo: null,
+        image: null,
+        features: [
+          'JWT auth with three permission levels (Admin, Organizer, Traveler)',
+          'Shared and personal expenses with automatic split and debt optimisation',
+          'Activity calendar with booking confirmation and cancellation',
+          'Document upload and full-text search via Cloudinary',
+          'Async email notifications via Mailgun (invites, expenses, payments)',
+        ],
       },
       {
-        title: 'API Sketch',
+        title: 'VR Tolerance Chain Analysis',
         description:
-          'A minimal REST API playground for mocking backend endpoints without spinning up a full server.',
-        stack: ['Node.js', 'Express', 'PostgreSQL'],
-        github: 'https://github.com',
-        demo: 'https://example.com',
+          'Master\'s thesis project (in progress). A Python plugin for Autodesk VRED that analyses tolerance chain data from 3DCS and visualises gap/flush measurements on automotive components directly in the 3D scene.',
+        stack: ['Python', 'Autodesk VRED', '3DCS', 'pandas', 'VR'],
+        github: '',
+        demo: null,
+        image: null,
+        features: [
+          'Parses 3DCS output tables with pandas for gap and flush tolerance data',
+          'Places interactive 3D spheres at exact measurement coordinates in VRED scene',
+          'Click a sphere to inspect measurement details and select it for export',
+          'Generates the input file for the nVIZ Perceived Quality Plugin',
+          'Enables real-time visualisation of min/max/mean tolerance deformations in VR',
+        ],
       },
     ],
   },
@@ -139,18 +163,25 @@ export const en: Translations = {
       title: 'Education',
       items: [
         {
-          year: '2021 – 2024',
-          title: "Bachelor's in Computer Science",
-          place: 'Università degli Studi di Milano',
+          year: 'Oct 2018 – Dec 2022',
+          title: "Bachelor's Degree in Computer Engineering",
+          place: 'Politecnico di Torino',
           description:
-            'Focused on software engineering and web technologies. Thesis on component-driven design systems.',
+            'Three-year programme focused on software engineering, computer systems, and digital infrastructure. Covered algorithms, operating systems, databases, and software development methodologies at one of Italy\'s top technical universities.',
         },
         {
-          year: '2016 – 2021',
-          title: 'Scientific High School Diploma',
-          place: 'Liceo Scientifico — Milan',
+          year: 'Dec 2022 – Present',
+          title: "Master's Degree in Computer Engineering – Software Track",
+          place: 'Politecnico di Torino',
           description:
-            'Mathematics, physics, and the revelation that I was much better at computers than at chemistry.',
+            'Advanced programme focused on designing and managing large-scale software systems. The Software track emphasises software architecture, quality, and maintenance of complex projects involving large teams. Currently in progress.',
+        },
+        {
+          year: '2025 – Present',
+          title: 'Google Machine Learning Crash Course',
+          place: 'Google Developers (online)',
+          description:
+            'Self-directed course covering the fundamentals of machine learning, including supervised learning, neural networks, and practical applications.',
         },
       ],
     },
@@ -158,25 +189,18 @@ export const en: Translations = {
       title: 'Work Experience',
       items: [
         {
-          year: '2024 – now',
-          title: 'Junior Frontend Developer',
-          place: 'Startup XYZ — Milan',
+          year: '2018 – Present',
+          title: 'Private Tutor',
+          place: 'Self-employed',
           description:
-            'Building and maintaining a React dashboard. Often the first one to notice the typo in production.',
+            'Six+ years tutoring computer science, mathematics, physics, and chemistry. Teaching complex topics sharpened my ability to communicate clearly and adapt to different learning styles. Watching students grow passionate about subjects they once struggled with is what motivates me most.',
         },
         {
-          year: '2023',
-          title: 'Frontend Intern',
-          place: 'Agency ABC — Remote',
+          year: 'Nov 2025 – Present',
+          title: 'Thesis Intern – VR Tolerance Chain Analysis Project',
+          place: 'Italdesign — Moncalieri (TO)',
           description:
-            'Translated Figma dreams into CSS reality. Learned that "just a small change" is never just a small change.',
-        },
-        {
-          year: '2022',
-          title: 'Freelance Web Developer',
-          place: 'Various clients',
-          description:
-            'Built landing pages, small e-commerce sites, and the confidence to charge for my time.',
+            'Developing a Virtual Reality application for tolerance chain analysis in automotive design, bridging software engineering and industrial design workflows.',
         },
       ],
     },
@@ -185,9 +209,9 @@ export const en: Translations = {
   contacts: {
     title: "Let's talk",
     closing:
-      "Whether it's a project, a collaboration, or just sharing a good CSS meme — my inbox is friendly.",
-    email: 'hello@diana.dev',
-    linkedin: 'linkedin.com/in/diana',
-    github: 'github.com/diana',
+      "Whether it's a project, a collaboration, or just sharing a good cs meme - my inbox is friendly :)",
+    email: 'di.husanu@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/dianahusanu/',
+    github: 'https://github.com/DianaHus',
   },
 }
