@@ -1,5 +1,6 @@
 import { useLanguage } from '../../i18n/LanguageContext'
 import type { ExperienceItem } from '../../types'
+import { Reveal } from '../animations/Reveal'
 
 // =============================================================================
 // SOTTOCOMPONENTE: TimelineEntry
@@ -18,11 +19,11 @@ function TimelineEntry({ item, isLast }: TimelineEntryProps) {
 
       {/* Linea verticale che connette i punti — nascosta sull'ultimo elemento */}
       {!isLast && (
-        <div className="absolute left-[6px] top-4 bottom-0 w-px bg-pink-100 dark:bg-pink-900/50" />
+        <div className="timeline-line-draw absolute left-[6px] top-4 bottom-0 w-px bg-pink-100 dark:bg-pink-900/50" />
       )}
 
       {/* Dot della timeline */}
-      <div className="absolute left-0 top-[6px] w-3 h-3 rounded-full bg-pink-200 dark:bg-pink-700 ring-2 ring-white dark:ring-gray-800 ring-offset-1" />
+      <div className="timeline-dot-pop absolute left-0 top-[6px] w-3 h-3 rounded-full bg-pink-200 dark:bg-pink-700 ring-2 ring-white dark:ring-gray-800 ring-offset-1" />
 
       {/* Anno */}
       <p className="text-xs font-semibold text-pink-400 tracking-widest uppercase mb-1.5">
@@ -55,14 +56,14 @@ export function Experience() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Intestazione sezione */}
-        <div className="mb-16">
+        <Reveal className="mb-16" delayIndex={1}>
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-pink-400 mb-3">
             03
           </p>
           <h2 className="font-serif text-4xl md:text-5xl font-medium text-gray-900 dark:text-gray-100">
             {experience.title}
           </h2>
-        </div>
+        </Reveal>
 
         {/* Due colonne: Formazione | Lavoro */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -74,12 +75,13 @@ export function Experience() {
             </h3>
             <div>
               {experience.education.items.map((item, i) => (
-                <TimelineEntry
-                  key={i}
-                  item={item}
-                  // L'ultimo elemento non ha la linea verticale
-                  isLast={i === experience.education.items.length - 1}
-                />
+                <Reveal key={i} delayIndex={Math.min(i + 2, 10)}>
+                  <TimelineEntry
+                    item={item}
+                    // L'ultimo elemento non ha la linea verticale
+                    isLast={i === experience.education.items.length - 1}
+                  />
+                </Reveal>
               ))}
             </div>
           </div>
@@ -91,11 +93,12 @@ export function Experience() {
             </h3>
             <div>
               {experience.work.items.map((item, i) => (
-                <TimelineEntry
-                  key={i}
-                  item={item}
-                  isLast={i === experience.work.items.length - 1}
-                />
+                <Reveal key={i} delayIndex={Math.min(i + 3, 10)}>
+                  <TimelineEntry
+                    item={item}
+                    isLast={i === experience.work.items.length - 1}
+                  />
+                </Reveal>
               ))}
             </div>
           </div>

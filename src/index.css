@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
   /* Scroll fluido tra le sezioni anchor */
   html {
     scroll-behavior: smooth;
@@ -21,5 +22,299 @@
     @apply font-sans text-gray-700 antialiased bg-white;
     @apply dark:bg-gray-900 dark:text-gray-300;
     transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+@layer utilities {
+  .hero-spotlight {
+    --spot-x: 50%;
+    --spot-y: 35%;
+    --spot-opacity: 0;
+  }
+
+  .hero-spotlight::before {
+    content: '';
+    position: absolute;
+    inset: -15%;
+    pointer-events: none;
+    background: radial-gradient(380px circle at var(--spot-x) var(--spot-y),
+        rgb(244 114 182 / 0.2),
+        transparent 58%);
+    opacity: var(--spot-opacity);
+    transition: opacity 260ms ease;
+    z-index: 0;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+    transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .reveal-delay-0 {
+    transition-delay: 0ms;
+  }
+
+  .reveal-delay-1 {
+    transition-delay: 80ms;
+  }
+
+  .reveal-delay-2 {
+    transition-delay: 160ms;
+  }
+
+  .reveal-delay-3 {
+    transition-delay: 240ms;
+  }
+
+  .reveal-delay-4 {
+    transition-delay: 320ms;
+  }
+
+  .reveal-delay-5 {
+    transition-delay: 400ms;
+  }
+
+  .reveal-delay-6 {
+    transition-delay: 480ms;
+  }
+
+  .reveal-delay-7 {
+    transition-delay: 560ms;
+  }
+
+  .reveal-delay-8 {
+    transition-delay: 640ms;
+  }
+
+  .reveal-delay-9 {
+    transition-delay: 720ms;
+  }
+
+  .reveal-delay-10 {
+    transition-delay: 800ms;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 9s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float-medium 11s ease-in-out infinite;
+  }
+
+  .icon-pop {
+    transition: transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .group:hover .icon-pop {
+    transform: scale(1.08);
+  }
+
+  .timeline-line-draw {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+
+  .timeline-dot-pop {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  .reveal.is-visible .timeline-line-draw {
+    animation: timeline-draw 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .reveal.is-visible .timeline-dot-pop {
+    animation: timeline-dot-pop 380ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 120ms;
+  }
+
+  .split-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(4px);
+  }
+
+  .reveal.is-visible .split-word {
+    animation: split-word-in 620ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .split-delay-0 {
+    animation-delay: 0ms;
+  }
+
+  .split-delay-1 {
+    animation-delay: 90ms;
+  }
+
+  .split-delay-2 {
+    animation-delay: 180ms;
+  }
+
+  .split-delay-3 {
+    animation-delay: 270ms;
+  }
+
+  .split-delay-4 {
+    animation-delay: 360ms;
+  }
+
+  .split-delay-5 {
+    animation-delay: 450ms;
+  }
+
+  .split-delay-6 {
+    animation-delay: 540ms;
+  }
+
+  .split-delay-7 {
+    animation-delay: 630ms;
+  }
+
+  .split-delay-8 {
+    animation-delay: 720ms;
+  }
+
+  .split-delay-9 {
+    animation-delay: 810ms;
+  }
+
+  .split-delay-10 {
+    animation-delay: 900ms;
+  }
+
+  .tilt-card {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 300ms ease;
+  }
+
+  .tilt-card::before {
+    content: '';
+    position: absolute;
+    inset: -30% 40% auto -40%;
+    height: 180%;
+    background: linear-gradient(120deg,
+        transparent 20%,
+        rgb(255 255 255 / 0.3) 45%,
+        transparent 65%);
+    transform: translateX(-110%) rotate(12deg);
+    transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .tilt-card:hover {
+    transform: perspective(1200px) rotateX(5deg) rotateY(-5deg) translateY(-8px);
+    box-shadow: 0 16px 35px rgb(0 0 0 / 0.12);
+    border-color: rgb(244 114 182 / 0.35);
+  }
+
+  .tilt-card:hover::before {
+    transform: translateX(160%) rotate(12deg);
+  }
+
+  .dark .tilt-card:hover {
+    box-shadow: 0 18px 40px rgb(0 0 0 / 0.45);
+    border-color: rgb(244 114 182 / 0.45);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-14px) translateX(-8px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes float-medium {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(12px) translateX(10px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes timeline-draw {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes timeline-dot-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes split-word-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.is-visible,
+  .hero-spotlight::before,
+  .animate-float-slow,
+  .animate-float-medium,
+  .icon-pop,
+  .timeline-line-draw,
+  .timeline-dot-pop,
+  .split-word,
+  .tilt-card,
+  .tilt-card::before {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
   }
 }

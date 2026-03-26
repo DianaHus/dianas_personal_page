@@ -20,6 +20,7 @@ export interface Translations {
     role: string
     tagline: string
     cta: string
+    ctaSecondary: string
   }
   about: {
     title: string
@@ -63,11 +64,12 @@ export const en: Translations = {
   },
 
   hero: {
-    greeting: 'Just Call Me "Di"',
+    greeting: 'Just Call Me\u00A0"Di"',
     role: 'Diana Husanu, Computer Engineer',
     tagline:
       "I write code that mostly works, interfaces that don't make people cry, Python plugins, web apps, and tinkering with AI experiments. Currently based in Turin and fueled by curiosity (and caffeine).",
     cta: 'See my work',
+    ctaSecondary: 'Contact me',
   },
 
   about: {

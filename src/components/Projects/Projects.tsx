@@ -1,5 +1,6 @@
 import { useLanguage } from '../../i18n/LanguageContext'
 import type { Project } from '../../types'
+import { Reveal } from '../animations/Reveal'
 
 // Cicliamo tra questi colori per i tag dello stack tecnologico
 const TAG_COLORS = [
@@ -23,7 +24,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, githubLabel, demoLabel }: ProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow">
+    <div className="tilt-card bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow">
 
       {/* Immagine — renderizzata SOLO se `project.image` non è null */}
       {project.image !== null && (
@@ -120,7 +121,7 @@ export function Projects() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Intestazione sezione */}
-        <div className="mb-16">
+        <Reveal className="mb-16" delayIndex={1}>
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-pink-400 mb-3">
             02
           </p>
@@ -130,7 +131,7 @@ export function Projects() {
           <p className="text-gray-500 dark:text-gray-400 text-base max-w-xl">
             {projects.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Grid di card: 1 colonna su mobile, 2 su tablet, 3 su desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -138,13 +139,14 @@ export function Projects() {
             `projects.items` è `Project[]` — TypeScript conosce il tipo di ogni `project`
             nel callback, quindi autocomplete e type checking funzionano.
           */}
-          {projects.items.map(project => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              githubLabel={projects.githubLabel}
-              demoLabel={projects.demoLabel}
-            />
+          {projects.items.map((project, index) => (
+            <Reveal key={project.title} delayIndex={Math.min(index + 2, 10)}>
+              <ProjectCard
+                project={project}
+                githubLabel={projects.githubLabel}
+                demoLabel={projects.demoLabel}
+              />
+            </Reveal>
           ))}
         </div>
       </div>

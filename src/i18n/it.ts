@@ -12,11 +12,12 @@ export const it: Translations = {
   },
 
   hero: {
-    greeting: 'Puoi Chiamarmi "Di"',
+    greeting: 'Puoi Chiamarmi\u00A0"Di"',
     role: 'Diana Husanu, Computer Engineer',
     tagline:
       'Scrivo codice che funziona quasi sempre, interfacce che non fanno piangere, plugin Python, applicazioni web e qualche esperimento di AI. Al momento vivo a Torino e tiro avanti a curiosità (e caffè).',
     cta: 'Scopri i miei lavori',
+    ctaSecondary: 'Contattami',
   },
 
   about: {
