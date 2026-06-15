@@ -1,4 +1,4 @@
-import type { Project, ExperienceItem } from '../types'
+import type { Project, ExperienceItem, EventItem } from '../types'
 
 // =============================================================================
 // INTERFACCIA DELLE TRADUZIONI
@@ -13,6 +13,7 @@ export interface Translations {
     about: string
     projects: string
     experience: string
+    events: string
     contacts: string
   }
   hero: {
@@ -40,6 +41,10 @@ export interface Translations {
     education: { title: string; items: ExperienceItem[] }
     work: { title: string; items: ExperienceItem[] }
   }
+  events: {
+    title: string
+    items: EventItem[]
+  }
   contacts: {
     title: string
     closing: string
@@ -60,6 +65,7 @@ export const en: Translations = {
     about: 'About',
     projects: 'Projects',
     experience: 'Experience',
+    events: 'Events',
     contacts: 'Contacts',
   },
 
@@ -221,6 +227,62 @@ export const en: Translations = {
         },
       ],
     },
+  },
+
+  events: {
+    title: 'Hackathons & Events',
+    items: [
+      {
+        date: '28 Mar 2026',
+        title: 'BEST × NTT DATA Hackathon',
+        organizer: 'BEST Politecnico di Torino × NTT DATA',
+        location: 'Turin, Italy',
+        result: '1st Place — 143 participants, 40+ teams',
+        description:
+          'My first hackathon — and we won it. Led a cross-disciplinary team of 4 through the full challenge: pick an industry vertical, map AI opportunities across its value chain, score and prioritise use cases, and deliver a Make vs Buy strategic recommendation. We chose automotive. Evaluated 20 AI use cases across four process areas — Embedded SW Development, Cybersecurity Engineering, V&V, and Predictive Maintenance — and presented four final recommendations before a jury of NTT DATA experts.',
+        tags: ['AI Strategy', 'Automotive', 'Team Lead'],
+      },
+      {
+        date: '17 Apr 2026',
+        title: 'Hackathon — SIAE & DataPizza',
+        organizer: 'SIAE & DataPizza',
+        location: 'Rome, Italy',
+        result: null,
+        description:
+          'Selected among the top 10 out of 650+ applicants. Built a Claude Code plugin from scratch — SessionStart hook, Conventional Commits gate, a reviewer agent with token budget, and 4 skill files (brainstorming, TDD, implementation, verification). Then used the plugin live to build SIAE+: Vue 3 frontend, TypeScript/Express backend, JWT auth, bcrypt, and 70% Vitest coverage.',
+        tags: ['Plugin Dev', 'Full Stack', 'Claude Code'],
+      },
+      {
+        date: '23 May 2026',
+        title: 'Vibathon',
+        organizer: 'LifeAtPolito × Lovable',
+        location: 'Turin, Italy',
+        result: null,
+        description:
+          'Built an app that lets local venues — restaurants, clubs, associations — create events through a voice AI chat (OpenAI API integration). Events flow into Parley, a Turin-based startup whose chatbot connects users looking for social activities (aperitivo with strangers, a tennis match, a study group) to what\'s happening nearby. Proud of the work even though we didn\'t place.',
+        tags: ['Voice AI', 'OpenAI', 'Social'],
+      },
+      {
+        date: '9 Jun 2026',
+        title: 'TIM Innovation Lab Experience — Women in STEM',
+        organizer: 'TIM',
+        location: 'Turin, Italy (OGR)',
+        result: null,
+        description:
+          "Selected for a morning of group work at TIM's Customer Innovation Center at OGR Turin. Our team designed an XR solution — a VR headset tool — to help patients with serious conditions (oncological, autoimmune) understand their diagnosis, treatment journey, and what to expect at each stage. The solution was praised as genuinely innovative by TIM's team.",
+        tags: ['XR / VR', 'Healthcare', 'Women in STEM'],
+      },
+      {
+        date: '13 Jun 2026',
+        title: 'The Triage — Empatica Technical Day',
+        organizer: 'Empatica',
+        location: 'Milan, Italy',
+        result: null,
+        description:
+          "A day at Empatica's offices working on a medical triage challenge: build a tool to rank 6 patients with chronic neurological conditions by care priority, using 7 days of wearable sensor data (HR, EDA, temperature, accelerometry + self-reports) fetched via REST API. Our team built a nurse-facing web app and delivered a strong presentation. Great team coordination — some of the most enjoyable collaborative work I've had.",
+        tags: ['Healthcare', 'Data Analysis', 'Wearables'],
+      },
+    ],
   },
 
   contacts: {

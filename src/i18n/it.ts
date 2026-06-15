@@ -8,6 +8,7 @@ export const it: Translations = {
     about: 'Chi sono',
     projects: 'Progetti',
     experience: 'Percorso',
+    events: 'Eventi',
     contacts: 'Contatti',
   },
 
@@ -169,6 +170,62 @@ export const it: Translations = {
         },
       ],
     },
+  },
+
+  events: {
+    title: 'Hackathon & Eventi',
+    items: [
+      {
+        date: '28 Mar 2026',
+        title: 'BEST × NTT DATA Hackathon',
+        organizer: 'BEST Politecnico di Torino × NTT DATA',
+        location: 'Torino, Italia',
+        result: '1° Posto — 143 partecipanti, 40+ team',
+        description:
+          'Il mio primo hackathon — e lo abbiamo vinto. Ho guidato un team cross-disciplinare di 4 persone attraverso la sfida completa: scegliere un verticale industriale, mappare le opportunità AI lungo la catena del valore, prioritizzare i casi d\'uso e consegnare una raccomandazione strategica Make vs Buy. Abbiamo scelto l\'automotive. Valutati 20 casi d\'uso AI su quattro aree di processo — Embedded SW Development, Cybersecurity Engineering, V&V e Predictive Maintenance — e presentato quattro raccomandazioni finali davanti a una giuria di esperti NTT DATA.',
+        tags: ['AI Strategy', 'Automotive', 'Team Lead'],
+      },
+      {
+        date: '17 Apr 2026',
+        title: 'Hackathon — SIAE & DataPizza',
+        organizer: 'SIAE & DataPizza',
+        location: 'Roma, Italia',
+        result: null,
+        description:
+          'Selezionata tra le prime 10 su 650+ candidate. Ho costruito da zero un plugin per Claude Code — hook SessionStart, gate Conventional Commits, un agente reviewer con budget token, e 4 skill file (brainstorming, TDD, implementazione, verifica). Poi ho usato il plugin dal vivo per sviluppare SIAE+: frontend Vue 3, backend TypeScript/Express, JWT auth, bcrypt e 70% di copertura Vitest.',
+        tags: ['Plugin Dev', 'Full Stack', 'Claude Code'],
+      },
+      {
+        date: '23 Mag 2026',
+        title: 'Vibathon',
+        organizer: 'LifeAtPolito × Lovable',
+        location: 'Torino, Italia',
+        result: null,
+        description:
+          'App che permette a locali — ristoranti, circoli, associazioni — di creare eventi tramite una chat vocale con l\'AI (integrazione API OpenAI). Gli eventi confluiscono in Parley, una startup torinese il cui chatbot mette in contatto persone che cercano attività sociali (un aperitivo tra sconosciuti, una partita a tennis, un gruppo studio) con quello che succede vicino a loro. Fiera del lavoro fatto anche se non siamo arrivate in cima.',
+        tags: ['Voice AI', 'OpenAI', 'Social'],
+      },
+      {
+        date: '9 Giu 2026',
+        title: 'TIM Innovation Lab Experience — Women in STEM',
+        organizer: 'TIM',
+        location: 'Torino, Italia (OGR)',
+        result: null,
+        description:
+          'Selezionata per una mattinata di lavoro di gruppo al Customer Innovation Center di TIM all\'OGR di Torino. Il nostro team ha progettato una soluzione XR — un tool tramite visore VR — per aiutare pazienti con patologie serie (oncologiche, autoimmuni) a capire la propria diagnosi, il decorso della malattia e cosa aspettarsi in ogni fase. La soluzione è stata definita genuinamente innovativa dal team TIM.',
+        tags: ['XR / VR', 'Healthcare', 'Women in STEM'],
+      },
+      {
+        date: '13 Giu 2026',
+        title: 'The Triage — Empatica Technical Day',
+        organizer: 'Empatica',
+        location: 'Milano, Italia',
+        result: null,
+        description:
+          'Una giornata negli uffici di Empatica su una sfida di triage medico: costruire uno strumento per classificare 6 pazienti con condizioni neurologiche croniche per priorità di cura, usando 7 giorni di dati da sensori indossabili (HR, EDA, temperatura, accelerometria + auto-report) recuperati via REST API. Il nostro team ha sviluppato una web app per infermieri e tenuto una presentazione convincente. Coordinamento di squadra ottimo — uno dei lavori collaborativi più belli che abbia fatto.',
+        tags: ['Healthcare', 'Data Analysis', 'Wearables'],
+      },
+    ],
   },
 
   contacts: {

@@ -36,3 +36,17 @@ export interface ExperienceItem {
   place: string
   description: string
 }
+
+/**
+ * Rappresenta un hackathon o evento nella sezione dedicata.
+ * `result` è null quando non c'è un piazzamento da mostrare (semplice partecipazione).
+ */
+export interface EventItem {
+  date: string          // es. "Apr 2026"
+  title: string
+  organizer: string
+  location: string
+  description: string
+  result: string | null // es. "1st Place", null se partecipazione
+  tags: string[]
+}

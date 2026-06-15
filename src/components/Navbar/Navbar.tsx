@@ -16,11 +16,12 @@ export function Navbar() {
     { href: '#about', label: t.nav.about },
     { href: '#projects', label: t.nav.projects },
     { href: '#experience', label: t.nav.experience },
+    { href: '#events', label: t.nav.events },
     { href: '#contacts', label: t.nav.contacts },
   ]
 
   useEffect(() => {
-    const sections = ['about', 'projects', 'experience', 'contacts']
+    const sections = ['about', 'projects', 'experience', 'events', 'contacts']
 
     const observer = new IntersectionObserver(
       entries => {
