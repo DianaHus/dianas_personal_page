@@ -225,6 +225,17 @@ export const it: Translations = {
           'Una giornata negli uffici di Empatica su una sfida di triage medico: costruire uno strumento per classificare 6 pazienti con condizioni neurologiche croniche per priorità di cura, usando 7 giorni di dati da sensori indossabili (HR, EDA, temperatura, accelerometria + auto-report) recuperati via REST API. Il nostro team ha sviluppato una web app per infermieri e tenuto una presentazione convincente. Coordinamento di squadra ottimo — uno dei lavori collaborativi più belli che abbia fatto.',
         tags: ['Healthcare', 'Data Analysis', 'Wearables'],
       },
+      {
+        date: '24 Giu 2026',
+        title: 'Lovable × Databricks Hackathon',
+        organizer: 'Lovable × Databricks',
+        location: 'Londra, UK',
+        result: null,
+        description:
+          'Hackathon a Londra organizzato da Lovable e Databricks. Non vedo l\'ora.',
+        tags: ['Lovable', 'Databricks'],
+        upcoming: true,
+      },
     ],
   },
 

@@ -8,7 +8,18 @@ interface EventCardProps {
 
 function EventCard({ item }: EventCardProps) {
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-4 h-full">
+    <div className={`rounded-2xl p-6 flex flex-col gap-4 h-full ${
+      item.upcoming
+        ? 'bg-white dark:bg-gray-900 border-2 border-dashed border-pink-200 dark:border-pink-800'
+        : 'bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm'
+    }`}>
+
+      {/* Upcoming badge */}
+      {item.upcoming && (
+        <span className="self-start text-xs font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-pink-50 dark:bg-pink-950/30 text-pink-400 dark:text-pink-500 border border-pink-200 dark:border-pink-800">
+          Coming up
+        </span>
+      )}
 
       {/* Result badge — solo se presente */}
       {item.result && (

@@ -49,4 +49,5 @@ export interface EventItem {
   description: string
   result: string | null // es. "1st Place", null se partecipazione
   tags: string[]
+  upcoming?: boolean    // true = evento futuro, mostra badge diverso e bordo tratteggiato
 }
