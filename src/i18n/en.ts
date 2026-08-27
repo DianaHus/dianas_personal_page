@@ -117,7 +117,7 @@ export const en: Translations = {
       {
         title: 'VR Tolerance Chain Analysis',
         description:
-          'Master\'s thesis project (in progress). A Python plugin for Autodesk VRED that analyses tolerance chain data from 3DCS and visualises gap/flush measurements on automotive components directly in the 3D scene.',
+          'Master\'s thesis project (completed). A Python plugin for Autodesk VRED that analyses tolerance chain data from 3DCS and visualises gap/flush measurements on automotive components directly in the 3D scene.',
         stack: ['Python', 'Autodesk VRED', '3DCS', 'pandas', 'VR'],
         github: '',
         demo: null,
