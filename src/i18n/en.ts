@@ -20,8 +20,6 @@ export interface Translations {
     greeting: string
     role: string
     tagline: string
-    cta: string
-    ctaSecondary: string
   }
   about: {
     title: string
@@ -72,10 +70,7 @@ export const en: Translations = {
   hero: {
     greeting: 'Just Call Me\u00A0"Di"',
     role: 'Diana Husanu, Computer Engineer',
-    tagline:
-      "I build things: code that mostly works, interfaces that (hopefully) don't make anyone cry, Python plugins, web apps, and AI experiments that occasionally take over my weekends. Recently moved to Milan, running on curiosity and caffeine in roughly equal parts. I also can't resist learning something new just because it's there: the summer after graduating, that something was German, self-taught, for no particular reason beyond wanting to see if I could.",
-    cta: 'See my work',
-    ctaSecondary: 'Contact me',
+    tagline: 'Code that (mostly) works, powered by curiosity and caffeine.',
   },
 
   about: {

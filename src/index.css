@@ -11,12 +11,6 @@
     transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  /* Compensa l'altezza della navbar fissa (h-16 = 4rem = 64px) */
-  section[id],
-  footer[id] {
-    scroll-margin-top: 4rem;
-  }
-
   /* Font e colore di default per il body */
   body {
     @apply font-sans text-gray-700 antialiased bg-white;
@@ -26,25 +20,6 @@
 }
 
 @layer utilities {
-  .hero-spotlight {
-    --spot-x: 50%;
-    --spot-y: 35%;
-    --spot-opacity: 0;
-  }
-
-  .hero-spotlight::before {
-    content: '';
-    position: absolute;
-    inset: -15%;
-    pointer-events: none;
-    background: radial-gradient(380px circle at var(--spot-x) var(--spot-y),
-        rgb(244 114 182 / 0.2),
-        transparent 58%);
-    opacity: var(--spot-opacity);
-    transition: opacity 260ms ease;
-    z-index: 0;
-  }
-
   .reveal {
     opacity: 0;
     transform: translateY(22px) scale(0.98);
@@ -100,14 +75,6 @@
 
   .reveal-delay-10 {
     transition-delay: 800ms;
-  }
-
-  .animate-float-slow {
-    animation: float-slow 9s ease-in-out infinite;
-  }
-
-  .animate-float-medium {
-    animation: float-medium 11s ease-in-out infinite;
   }
 
   .icon-pop {
@@ -231,34 +198,6 @@
   }
 }
 
-@keyframes float-slow {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-
-  50% {
-    transform: translateY(-14px) translateX(-8px);
-  }
-
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-}
-
-@keyframes float-medium {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-
-  50% {
-    transform: translateY(12px) translateX(10px);
-  }
-
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-}
-
 @keyframes timeline-draw {
   from {
     transform: scaleY(0);
@@ -302,9 +241,6 @@
 
   .reveal,
   .reveal.is-visible,
-  .hero-spotlight::before,
-  .animate-float-slow,
-  .animate-float-medium,
   .icon-pop,
   .timeline-line-draw,
   .timeline-dot-pop,

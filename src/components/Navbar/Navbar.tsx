@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { useTheme } from '../../theme/ThemeContext'
 
@@ -6,72 +7,56 @@ export function Navbar() {
   const { lang, t, toggleLang } = useLanguage()
   const { theme, toggleTheme } = useTheme()
 
+  // La home è una "cover" editoriale: la navigazione principale vive già nell'hero
+  // (l'indice numerato 01–05), quindi qui nascondiamo i link — restano solo logo,
+  // tema e lingua. Su tutte le altre pagine la navbar è invariata.
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
+
   // Stato locale per il menu mobile — non serve nel context perché
   // è rilevante solo per questo componente
   const [menuOpen, setMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('about')
 
   // Array di link — usiamo `t.nav.*` così cambiano automaticamente con la lingua
   const links = [
-    { href: '#about', label: t.nav.about },
-    { href: '#projects', label: t.nav.projects },
-    { href: '#experience', label: t.nav.experience },
-    { href: '#events', label: t.nav.events },
-    { href: '#contacts', label: t.nav.contacts },
+    { to: '/about', label: t.nav.about },
+    { to: '/projects', label: t.nav.projects },
+    { to: '/experience', label: t.nav.experience },
+    { to: '/events', label: t.nav.events },
+    { to: '/contacts', label: t.nav.contacts },
   ]
 
-  useEffect(() => {
-    const sections = ['about', 'projects', 'experience', 'events', 'contacts']
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      {
-        rootMargin: '-35% 0px -50% 0px',
-        threshold: 0.15,
-      }
-    )
-
-    sections.forEach(sectionId => {
-      const section = document.getElementById(sectionId)
-      if (section) observer.observe(section)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md transition-colors duration-300 ${isHome ? '' : 'border-b border-gray-100 dark:border-gray-800'}`}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Brand / logo */}
-        <a
-          href="#hero"
+        <NavLink
+          to="/"
+          end
           className="font-serif text-xl font-medium text-gray-900 dark:text-gray-100 hover:opacity-70 transition-opacity"
         >
           diana<span className="text-pink-400">.</span>dev
-        </a>
+        </NavLink>
 
-        {/* Nav links — visibili solo su desktop (nascosti su mobile con md:flex) */}
-        <nav className="hidden md:flex items-center gap-8">
-          {links.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm transition-colors ${activeSection === link.href.slice(1)
-                ? 'text-pink-500 dark:text-pink-400'
-                : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
-                }`}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* Nav links — visibili solo su desktop (nascosti su mobile con md:flex).
+            Sulla home non compaiono: la navigazione è l'indice nell'hero. */}
+        {!isHome && (
+          <nav className="hidden md:flex items-center gap-8">
+            {links.map(link => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) => `text-sm transition-colors ${isActive
+                  ? 'text-pink-500 dark:text-pink-400'
+                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
+                  }`}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+        )}
 
         {/* Theme toggle + Language toggle + hamburger (mobile) */}
         <div className="flex items-center gap-3">
@@ -104,40 +89,42 @@ export function Navbar() {
             {lang === 'it' ? 'EN' : 'IT'}
           </button>
 
-          {/* Hamburger — visibile solo su mobile */}
-          <button
-            className="md:hidden p-1.5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-            onClick={() => setMenuOpen(prev => !prev)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+          {/* Hamburger — visibile solo su mobile, mai sulla home */}
+          {!isHome && (
+            <button
+              className="md:hidden p-1.5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              onClick={() => setMenuOpen(prev => !prev)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Menu mobile — si apre sotto la navbar quando menuOpen è true */}
-      {menuOpen && (
+      {!isHome && menuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 px-6 py-5 flex flex-col gap-4">
           {links.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm transition-colors py-1 ${activeSection === link.href.slice(1)
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) => `text-sm transition-colors py-1 ${isActive
                 ? 'text-pink-500 dark:text-pink-400'
                 : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
                 }`}
               onClick={() => setMenuOpen(false)}   // chiudi il menu dopo il click
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </div>
       )}

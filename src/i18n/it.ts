@@ -15,10 +15,7 @@ export const it: Translations = {
   hero: {
     greeting: 'Puoi Chiamarmi\u00A0"Di"',
     role: 'Diana Husanu, Computer Engineer',
-    tagline:
-      'Buildo cose: codice che funziona quasi sempre, interfacce che (si spera) non facciano piangere nessuno, plugin Python, applicazioni web ed esperimenti di AI che ogni tanto mi mangiano il weekend. Vivo da poco a Milano, e vado avanti a curiosità e caffeina in dosi pressoché uguali. Inoltre non resisto mai a imparare qualcosa di nuovo solo perché esiste: l\'estate dopo la laurea è toccato al tedesco, studiato da autodidatta, senza un vero motivo se non voler vedere se ce la facessi.',
-    cta: 'Scopri i miei lavori',
-    ctaSecondary: 'Contattami',
+    tagline: 'Codice che funziona (quasi) sempre, a colpi di curiosità e caffeina.',
   },
 
   about: {
