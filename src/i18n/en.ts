@@ -60,11 +60,11 @@ export interface Translations {
 // =============================================================================
 export const en: Translations = {
   nav: {
-    about: 'About',
-    projects: 'Projects',
-    experience: 'Experience',
-    events: 'Events',
-    contacts: 'Contacts',
+    about: 'About Me',
+    projects: 'My Projects',
+    experience: 'My Experience',
+    events: 'Hackatons & Events',
+    contacts: 'Contact me :)',
   },
 
   hero: {
@@ -251,44 +251,25 @@ export const en: Translations = {
     title: 'Hackathons & Events',
     items: [
       {
-        date: '28 Mar 2026',
-        title: 'BEST × NTT DATA Hackathon',
-        organizer: 'BEST Politecnico di Torino × NTT DATA',
-        location: 'Turin, Italy',
-        result: '1st Place (143 participants, 40+ teams)',
-        description:
-          'My first hackathon. We won it. Led a cross-disciplinary team of 4 through the full challenge: pick an industry vertical, map AI opportunities across its value chain, score and prioritise use cases, and deliver a Make vs Buy strategic recommendation. We chose automotive. Evaluated 20 AI use cases across four process areas (Embedded SW Development, Cybersecurity Engineering, V&V, and Predictive Maintenance) and presented four final recommendations before a jury of NTT DATA experts.',
-        tags: ['AI Strategy', 'Automotive', 'Team Lead'],
-      },
-      {
-        date: '17 Apr 2026',
-        title: 'Hackathon SIAE & DataPizza',
-        organizer: 'SIAE & DataPizza',
-        location: 'Rome, Italy',
+        date: '16-17 Oct 2026',
+        title: 'BCG Platinion Hackathon 26',
+        organizer: 'BCG Platinion',
+        location: 'Milan, Italy',
         result: null,
         description:
-          'Selected among the top 10 out of 650+ applicants. Built a Claude Code plugin from scratch: SessionStart hook, Conventional Commits gate, a reviewer agent with token budget, and 4 skill files (brainstorming, TDD, implementation, verification). Then used the plugin live to build SIAE+: Vue 3 frontend, TypeScript/Express backend, JWT auth, bcrypt, and 70% Vitest coverage.',
-        tags: ['Plugin Dev', 'Full Stack', 'Claude Code'],
+          'Upcoming two-day hackathon focused on fighting world hunger: building tech solutions for food distribution, water access, and malnutrition prevention, guided by BCG Platinion AI Tech Consultants and Architects.',
+        tags: ['AI for Good', 'Social Impact', 'Hackathon'],
+        upcoming: true,
       },
       {
-        date: '23 May 2026',
-        title: 'Vibathon',
-        organizer: 'LifeAtPolito × Lovable',
-        location: 'Turin, Italy',
+        date: '24 Jun 2026',
+        title: 'Lovable × Databricks Hackathon',
+        organizer: 'Lovable × Databricks',
+        location: 'London, UK',
         result: null,
         description:
-          'Built an app that lets local venues (restaurants, clubs, associations) create events through a voice AI chat (OpenAI API integration). Events flow into Parley, a Turin-based startup whose chatbot connects users looking for social activities (aperitivo with strangers, a tennis match, a study group) to what\'s happening nearby. Proud of the work even though we didn\'t place.',
-        tags: ['Voice AI', 'OpenAI', 'Social'],
-      },
-      {
-        date: '9 Jun 2026',
-        title: 'TIM Innovation Lab Experience: Women in STEM',
-        organizer: 'TIM',
-        location: 'Turin, Italy (OGR)',
-        result: null,
-        description:
-          "Selected for a morning of group work at TIM's Customer Innovation Center at OGR Turin. Our team designed an XR solution (a VR headset tool) to help patients with serious conditions (oncological, autoimmune) understand their diagnosis, treatment journey, and what to expect at each stage. The solution was praised as genuinely innovative by TIM's team.",
-        tags: ['XR / VR', 'Healthcare', 'Women in STEM'],
+          "One-day hackathon at Databricks' London office to explore the connectors linking Lovable to Databricks lakehouses. Among the databases provided, I picked the one with a GP's patient records and built Patient Insights Hub: a clinical dashboard to search patients and explore encounters, prescriptions, lab results, and notes, with data read live from Databricks via SQL. I added two generative AI features scoped to a single patient: an automatic clinical summary and a Q&A chat, both strictly constrained to the retrieved data only, with no medical advice or diagnostic inference. Stack: React 19, TanStack Start/Router, Vercel AI SDK with Gemini.",
+        tags: ['Databricks', 'Lovable', 'Healthcare AI'],
       },
       {
         date: '13 Jun 2026',
@@ -301,14 +282,44 @@ export const en: Translations = {
         tags: ['Healthcare', 'Data Analysis', 'Wearables'],
       },
       {
-        date: '24 Jun 2026',
-        title: 'Lovable × Databricks Hackathon',
-        organizer: 'Lovable × Databricks',
-        location: 'London, UK',
+        date: '9 Jun 2026',
+        title: 'TIM Innovation Lab Experience: Women in STEM',
+        organizer: 'TIM',
+        location: 'Turin, Italy (OGR)',
         result: null,
         description:
-          "One-day hackathon at Databricks' London office to explore the connectors linking Lovable to Databricks lakehouses. Among the databases provided, I picked the one with a GP's patient records and built Patient Insights Hub: a clinical dashboard to search patients and explore encounters, prescriptions, lab results, and notes, with data read live from Databricks via SQL. I added two generative AI features scoped to a single patient: an automatic clinical summary and a Q&A chat, both strictly constrained to the retrieved data only, with no medical advice or diagnostic inference. Stack: React 19, TanStack Start/Router, Vercel AI SDK with Gemini.",
-        tags: ['Databricks', 'Lovable', 'Healthcare AI'],
+          "Selected for a morning of group work at TIM's Customer Innovation Center at OGR Turin. Our team designed an XR solution (a VR headset tool) to help patients with serious conditions (oncological, autoimmune) understand their diagnosis, treatment journey, and what to expect at each stage. The solution was praised as genuinely innovative by TIM's team.",
+        tags: ['XR / VR', 'Healthcare', 'Women in STEM'],
+      },
+      {
+        date: '23 May 2026',
+        title: 'Vibathon',
+        organizer: 'LifeAtPolito × Lovable',
+        location: 'Turin, Italy',
+        result: null,
+        description:
+          'Built an app that lets local venues (restaurants, clubs, associations) create events through a voice AI chat (OpenAI API integration). Events flow into Parley, a Turin-based startup whose chatbot connects users looking for social activities (aperitivo with strangers, a tennis match, a study group) to what\'s happening nearby. Proud of the work even though we didn\'t place.',
+        tags: ['Voice AI', 'OpenAI', 'Social'],
+      },
+      {
+        date: '17 Apr 2026',
+        title: 'Hackathon SIAE & DataPizza',
+        organizer: 'SIAE & DataPizza',
+        location: 'Rome, Italy',
+        result: null,
+        description:
+          'Selected among the top 10 out of 650+ applicants. Built a Claude Code plugin from scratch: SessionStart hook, Conventional Commits gate, a reviewer agent with token budget, and 4 skill files (brainstorming, TDD, implementation, verification). Then used the plugin live to build SIAE+: Vue 3 frontend, TypeScript/Express backend, JWT auth, bcrypt, and 70% Vitest coverage.',
+        tags: ['Plugin Dev', 'Full Stack', 'Claude Code'],
+      },
+      {
+        date: '28 Mar 2026',
+        title: 'BEST × NTT DATA Hackathon',
+        organizer: 'BEST Politecnico di Torino × NTT DATA',
+        location: 'Turin, Italy',
+        result: '1st Place (143 participants, 40+ teams)',
+        description:
+          'My first hackathon. We won it. Led a cross-disciplinary team of 4 through the full challenge: pick an industry vertical, map AI opportunities across its value chain, score and prioritise use cases, and deliver a Make vs Buy strategic recommendation. We chose automotive. Evaluated 20 AI use cases across four process areas (Embedded SW Development, Cybersecurity Engineering, V&V, and Predictive Maintenance) and presented four final recommendations before a jury of NTT DATA experts.',
+        tags: ['AI Strategy', 'Automotive', 'Team Lead'],
       },
     ],
   },

@@ -6,10 +6,10 @@ import type { Translations } from './en'
 export const it: Translations = {
   nav: {
     about: 'Chi sono',
-    projects: 'Progetti',
-    experience: 'Percorso',
-    events: 'Eventi',
-    contacts: 'Contatti',
+    projects: 'I Miei Progetti',
+    experience: 'Il Mio Percorso',
+    events: 'Hackaton & Eventi',
+    contacts: 'Contattami :)',
   },
 
   hero: {
@@ -196,44 +196,25 @@ export const it: Translations = {
     title: 'Hackathon & Eventi',
     items: [
       {
-        date: '28 Mar 2026',
-        title: 'BEST × NTT DATA Hackathon',
-        organizer: 'BEST Politecnico di Torino × NTT DATA',
-        location: 'Torino, Italia',
-        result: '1° Posto (143 partecipanti, 40+ team)',
-        description:
-          'Il mio primo hackathon. Lo abbiamo vinto. Ho guidato un team cross-disciplinare di 4 persone attraverso la sfida completa: scegliere un verticale industriale, mappare le opportunità AI lungo la catena del valore, prioritizzare i casi d\'uso e consegnare una raccomandazione strategica Make vs Buy. Abbiamo scelto l\'automotive. Valutati 20 casi d\'uso AI su quattro aree di processo (Embedded SW Development, Cybersecurity Engineering, V&V e Predictive Maintenance) e presentato quattro raccomandazioni finali davanti a una giuria di esperti NTT DATA.',
-        tags: ['AI Strategy', 'Automotive', 'Team Lead'],
-      },
-      {
-        date: '17 Apr 2026',
-        title: 'Hackathon SIAE & DataPizza',
-        organizer: 'SIAE & DataPizza',
-        location: 'Roma, Italia',
+        date: '16-17 Ott 2026',
+        title: 'BCG Platinion Hackathon 26',
+        organizer: 'BCG Platinion',
+        location: 'Milano, Italia',
         result: null,
         description:
-          'Selezionata tra le prime 10 su 650+ candidate. Ho costruito da zero un plugin per Claude Code: hook SessionStart, gate Conventional Commits, un agente reviewer con budget token, e 4 skill file (brainstorming, TDD, implementazione, verifica). Poi ho usato il plugin dal vivo per sviluppare SIAE+: frontend Vue 3, backend TypeScript/Express, JWT auth, bcrypt e 70% di copertura Vitest.',
-        tags: ['Plugin Dev', 'Full Stack', 'Claude Code'],
+          'Hackathon di due giorni contro la fame nel mondo: sviluppo di soluzioni tech per la distribuzione di cibo, l\'accesso all\'acqua e la prevenzione della malnutrizione, guidati dai Consultant e Architect AI Tech di BCG Platinion.',
+        tags: ['AI for Good', 'Impatto Sociale', 'Hackathon'],
+        upcoming: true,
       },
       {
-        date: '23 Mag 2026',
-        title: 'Vibathon',
-        organizer: 'LifeAtPolito × Lovable',
-        location: 'Torino, Italia',
+        date: '24 Giu 2026',
+        title: 'Lovable × Databricks Hackathon',
+        organizer: 'Lovable × Databricks',
+        location: 'Londra, UK',
         result: null,
         description:
-          'App che permette a locali (ristoranti, circoli, associazioni) di creare eventi tramite una chat vocale con l\'AI (integrazione API OpenAI). Gli eventi confluiscono in Parley, una startup torinese il cui chatbot mette in contatto persone che cercano attività sociali (un aperitivo tra sconosciuti, una partita a tennis, un gruppo studio) con quello che succede vicino a loro. Fiera del lavoro fatto anche se non siamo arrivate in cima.',
-        tags: ['Voice AI', 'OpenAI', 'Social'],
-      },
-      {
-        date: '9 Giu 2026',
-        title: 'TIM Innovation Lab Experience: Women in STEM',
-        organizer: 'TIM',
-        location: 'Torino, Italia (OGR)',
-        result: null,
-        description:
-          'Selezionata per una mattinata di lavoro di gruppo al Customer Innovation Center di TIM all\'OGR di Torino. Il nostro team ha progettato una soluzione XR (un tool tramite visore VR) per aiutare pazienti con patologie serie (oncologiche, autoimmuni) a capire la propria diagnosi, il decorso della malattia e cosa aspettarsi in ogni fase. La soluzione è stata definita genuinamente innovativa dal team TIM.',
-        tags: ['XR / VR', 'Healthcare', 'Women in STEM'],
+          'Hackathon di una giornata negli uffici Databricks a Londra, per esplorare i connector che collegano Lovable ai lakehouse Databricks. Tra i database messi a disposizione ho scelto quello con le cartelle cliniche di un medico di base e costruito Patient Insights Hub: un cruscotto clinico per cercare pazienti ed esplorare visite, prescrizioni, esami di laboratorio e note, con dati letti live da Databricks via SQL. Ho aggiunto due funzionalità di AI generativa scoped al singolo paziente: un riassunto clinico automatico e una chat Q&A, entrambe vincolate rigidamente ai soli dati recuperati, senza consigli medici né inferenze diagnostiche. Stack: React 19, TanStack Start/Router, Vercel AI SDK con Gemini.',
+        tags: ['Databricks', 'Lovable', 'Healthcare AI'],
       },
       {
         date: '13 Giu 2026',
@@ -246,14 +227,44 @@ export const it: Translations = {
         tags: ['Healthcare', 'Data Analysis', 'Wearables'],
       },
       {
-        date: '24 Giu 2026',
-        title: 'Lovable × Databricks Hackathon',
-        organizer: 'Lovable × Databricks',
-        location: 'Londra, UK',
+        date: '9 Giu 2026',
+        title: 'TIM Innovation Lab Experience: Women in STEM',
+        organizer: 'TIM',
+        location: 'Torino, Italia (OGR)',
         result: null,
         description:
-          'Hackathon di una giornata negli uffici Databricks a Londra, per esplorare i connector che collegano Lovable ai lakehouse Databricks. Tra i database messi a disposizione ho scelto quello con le cartelle cliniche di un medico di base e costruito Patient Insights Hub: un cruscotto clinico per cercare pazienti ed esplorare visite, prescrizioni, esami di laboratorio e note, con dati letti live da Databricks via SQL. Ho aggiunto due funzionalità di AI generativa scoped al singolo paziente: un riassunto clinico automatico e una chat Q&A, entrambe vincolate rigidamente ai soli dati recuperati, senza consigli medici né inferenze diagnostiche. Stack: React 19, TanStack Start/Router, Vercel AI SDK con Gemini.',
-        tags: ['Databricks', 'Lovable', 'Healthcare AI'],
+          'Selezionata per una mattinata di lavoro di gruppo al Customer Innovation Center di TIM all\'OGR di Torino. Il nostro team ha progettato una soluzione XR (un tool tramite visore VR) per aiutare pazienti con patologie serie (oncologiche, autoimmuni) a capire la propria diagnosi, il decorso della malattia e cosa aspettarsi in ogni fase. La soluzione è stata definita genuinamente innovativa dal team TIM.',
+        tags: ['XR / VR', 'Healthcare', 'Women in STEM'],
+      },
+      {
+        date: '23 Mag 2026',
+        title: 'Vibathon',
+        organizer: 'LifeAtPolito × Lovable',
+        location: 'Torino, Italia',
+        result: null,
+        description:
+          'App che permette a locali (ristoranti, circoli, associazioni) di creare eventi tramite una chat vocale con l\'AI (integrazione API OpenAI). Gli eventi confluiscono in Parley, una startup torinese il cui chatbot mette in contatto persone che cercano attività sociali (un aperitivo tra sconosciuti, una partita a tennis, un gruppo studio) con quello che succede vicino a loro. Fiera del lavoro fatto anche se non siamo arrivate in cima.',
+        tags: ['Voice AI', 'OpenAI', 'Social'],
+      },
+      {
+        date: '17 Apr 2026',
+        title: 'Hackathon SIAE & DataPizza',
+        organizer: 'SIAE & DataPizza',
+        location: 'Roma, Italia',
+        result: null,
+        description:
+          'Selezionata tra le prime 10 su 650+ candidate. Ho costruito da zero un plugin per Claude Code: hook SessionStart, gate Conventional Commits, un agente reviewer con budget token, e 4 skill file (brainstorming, TDD, implementazione, verifica). Poi ho usato il plugin dal vivo per sviluppare SIAE+: frontend Vue 3, backend TypeScript/Express, JWT auth, bcrypt e 70% di copertura Vitest.',
+        tags: ['Plugin Dev', 'Full Stack', 'Claude Code'],
+      },
+      {
+        date: '28 Mar 2026',
+        title: 'BEST × NTT DATA Hackathon',
+        organizer: 'BEST Politecnico di Torino × NTT DATA',
+        location: 'Torino, Italia',
+        result: '1° Posto (143 partecipanti, 40+ team)',
+        description:
+          'Il mio primo hackathon. Lo abbiamo vinto. Ho guidato un team cross-disciplinare di 4 persone attraverso la sfida completa: scegliere un verticale industriale, mappare le opportunità AI lungo la catena del valore, prioritizzare i casi d\'uso e consegnare una raccomandazione strategica Make vs Buy. Abbiamo scelto l\'automotive. Valutati 20 casi d\'uso AI su quattro aree di processo (Embedded SW Development, Cybersecurity Engineering, V&V e Predictive Maintenance) e presentato quattro raccomandazioni finali davanti a una giuria di esperti NTT DATA.',
+        tags: ['AI Strategy', 'Automotive', 'Team Lead'],
       },
     ],
   },

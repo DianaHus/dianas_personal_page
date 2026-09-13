@@ -36,7 +36,7 @@ export function Navbar() {
           end
           className="font-serif text-xl font-medium text-gray-900 dark:text-gray-100 hover:opacity-70 transition-opacity"
         >
-          diana<span className="text-pink-400">.</span>dev
+          &lt;Di <span className="text-pink-400">/</span>&gt;
         </NavLink>
 
         {/* Nav links — visibili solo su desktop (nascosti su mobile con md:flex).
